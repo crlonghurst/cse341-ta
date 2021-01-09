@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../includes/header.ejs %>
+</head>
+
+<body>
+  <% include ../includes/nav.ejs %>
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1><%= title %></h1>
+    
+  </div>
+</div>
+<div class="container">
+    <form class="prove01form form-inline" method="POST" action="prove01/studentForm">
+        <h2><%= error  %></h2>
+        <legend>
+        Enter a First Name: <input type="text" name="firstName" id="fName" required><br>
+        Enter a Last Name: <input type="text" name="lastName" id="lName" required><br>
+        Enter a Class Subject: <input type="text" name="subject" id="subject" required><br>
+        Enter a Professor name: <input type="text" name="professor" id="professor" required><br>
+        <button type="submit">Submit</button>
+        </legend>
+    </form>
+</div>
+
+
+</body>
+</html>

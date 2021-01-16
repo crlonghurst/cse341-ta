@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../includes/header.ejs %>
+</head>
+
+<body>
+  <% include ../includes/nav.ejs %>
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1><%= title %></h1>
+    
+  </div>
+</div>
+<% if(bookList.length > 0){%>
+  <% for (let book of bookList){%>
+<div class="container book">
+  <h2 class="bookTitle"><%= book.bookTitle %>:</h2>
+  <p><%= book.bookDesc %></p>
+  <hr>
+  <p><%= book.bookTitle %> was released on <%= book.releaseDate %></p>
+</div>
+<%}%>
+<%}%>
+<div class="container book">
+  <h2 class="bookTitle"><%= bookTitle %>:</h2>
+  <p><%= bookDesc %></p>
+  <hr>
+  <p><%= bookTitle %> was released on <%= releaseDate %></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../includes/header.ejs %>
+</head>
+
+<body>
+  <% include ../includes/nav.ejs %>
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1><%= title %></h1>
+    
+  </div>
+</div>
+<div class="container">
+    <form action="prove02/books" method="post">
+        <fieldset>
+            <legend>Title of a book: </legend>
+            <input type="text" name="bookTitle" id="bookTitle" placeholder="Book Title">
+        </fieldset>
+        <fieldset>
+            <legend>Description of a book: </legend>
+            <textarea name="bookDesc" id="bookDesc" cols="30" rows="10" placeholder="Book Description"></textarea>
+        </fieldset>
+        <fieldset>
+          <legend>Date of Release: </legend>
+          <input type="date" name="releaseDate" id="releaseDate">
+        </fieldset>
+        <button type="submit">Add new book</button>
+    </form>
+</div>
+
+
+</body>
+</html>

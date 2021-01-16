@@ -28,7 +28,17 @@
 .navbar + .jumbotron {
   margin-top: -20px; 
 }
-  
+
+.bookTitle{
+  text-align: center;
+}
+
+.book{
+  border-style: solid;
+  border-color:#0065BD;
+  text-align: center;
+}
+
 .jumbotron .lang-logo {
   display: block;
   background: #B01302;

@@ -1,0 +1,30 @@
+1. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/crlonghurst/cse341-ta
+3. Briefly list and describe the elements of the application that are functioning. 
+Both views are working properly, one view has a form to allow for input, mine has 3
+inputs that are then sent to the other page to display it. I am mostly finished with
+having the data from the form put into a json file, and be displayed from that.
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+I got everything that was needed in the base completed, though while working on 
+extra I got stuck. Meaning I was working on putting the information from the inputs
+into a json file then getting read back in for displaying on the second view. I got
+it partially done.
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+The coolest thing was learning how JSon objects work, and how I can read and 
+write to a json file that was really cool.
+6. If you could change this assignment to be more effective or helpful, what would you change?
+I would give more information on how router and apps interact.
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+
+4.5 
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+In some ways I went above and beyond but other ways I wasn't quite there. 
+For instance I was working on the reading and writing and displaying from a 
+json file, but didn't get that done. While I got the page looking professional.
+As well I was using EJS well.

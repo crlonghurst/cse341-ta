@@ -1,0 +1,25 @@
+1. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/crlonghurst/cse341-ta
+3. Briefly list and describe the elements of the application that are functioning. 
+There are 2 views one that has a form for name and class and professor.
+then the information from that form is processed and given to another view to display
+it.
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+I got every thing working.
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+The coolest thing is having an easier way of processing data from PHP.
+6. If you could change this assignment to be more effective or helpful, what would you change?
+I would give more information on how router and apps interact.
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+
+5
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+I gave extra form information instead of 2 I put in 4 that are working. 
+Also I gave some server side error handling, meaning if the form isn't fully filled out
+the server would tell the user that.

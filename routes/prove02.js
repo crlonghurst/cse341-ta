@@ -9,7 +9,7 @@ router.use(bodyParser.urlencoded({extended: true}))
 /*The code I am using for writing and reading from a file was based off of this stackoverflow post https://stackoverflow.com/questions/45237999/save-html-form-data-in-json-format-in-a-json-file-using-node-and-express-with-j */
 
 
-const file = '../public/data/bookData.json'
+//const file = '../public/data/bookData.json'
 
 
 
@@ -22,7 +22,7 @@ router.post('/books', (req,res,next)=>{
         res.redirect('/prove02');
     }
     else{
-        const obj = { bookTitle: req.body.bookTitle , desc: req.body.bookDesc, releasedDate: req.body.releaseDate }
+        /*const obj = { bookTitle: req.body.bookTitle , desc: req.body.bookDesc, releasedDate: req.body.releaseDate }
 
         
         const jsonData = fs.readFileSync(file)
@@ -41,12 +41,12 @@ router.post('/books', (req,res,next)=>{
             bookObj.push(book)
             
         }
-        const newBookList = fs.readFileSync(file)
+        const newBookList = fs.readFileSync(file)*/
 
         res.render('pages/bookDisplay.ejs',{
             title: 'Prove 02: Books',
             path: '/prove02/books',
-            bookList: bookObj,
+            //bookList: bookObj,
             bookTitle: req.body.bookTitle,
             bookDesc: req.body.bookDesc,
             releaseDate: req.body.releaseDate,

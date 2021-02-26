@@ -1,16 +1,3 @@
-/*******************************************************************************
- * Feel free to remove this comment block and all other comments after pulling. 
- * They're for information purposes only.
- * 
- * This layout is provided to you for an easy and quick setup to either pull
- * or use to correct yours after working at least 1 hour on Team Activity 02.
- * Throughout the course, we'll be using Express.js for our view engines.
- * However, feel free to use pug or handlebars ('with extension hbs'). You will
- * need to make sure you install them beforehand according to the reading from
- * Udemy course. 
- * IMPORTANT: Make sure to run "npm install" in your root before "npm start"
- *******************************************************************************/
-// Our initial setup (package requires, port number setup)
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -25,7 +12,10 @@ const ta03Routes = require('./routes/ta03');
 const ta04Routes = require('./routes/ta04'); 
 const prove01 = require('./routes/prove01');
 const prove02 = require('./routes/prove02');
-const router = require('./routes/ta01');
+const w05Class = require('./routes/w05Class');
+const ta05routes = require('./routes/ta05');
+const prove08 = require('./routes/prove08');
+
 
 app.use(express.static(path.join(__dirname, 'public')))
    .set('views', path.join(__dirname, 'views'))
@@ -42,6 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')))
    .use('/ta04', ta04Routes)
    .use('/prove01', prove01)
    .use('/prove02', prove02)
+   .use('/w05Class', w05Class)
+   .use('/ta05',ta05routes)
+   .use(prove08)
    .get('/', (req, res, next) => {
      // This is the primary index, always handled last. 
      res.render('pages/index', {title: 'Welcome to my CSE341 repo', path: '/'});
@@ -51,3 +44,4 @@ app.use(express.static(path.join(__dirname, 'public')))
      res.render('pages/404', {title: '404 - Page Not Found', path: req.url})
    })
    .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+

@@ -22,7 +22,7 @@ router.post('/search', (req, res, next) => {
                 //Search for tag in a product's tag and add if found
                 return product.tags.includes(tag);
             });
-            res.render('pages/teamActivities/ta03', {
+            res.render('../views/pages/ta03.ejs', {
                 title: 'Team ACtivity 03',
                 path: '/ta03',
                 productList: tagProducts,
@@ -46,7 +46,7 @@ router.get('/', (req, res, next) => {
                 })
             }
             console.log(products)
-            res.render('pages/teamActivities/ta03', {
+            res.render('../views/pages/ta03.ejs', {
                 title: 'Team Activity 03',
                 path: '/ta03', // For pug, EJS 
                 activeTA03: true, // For HBS

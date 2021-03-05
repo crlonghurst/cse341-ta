@@ -35,6 +35,9 @@ const getNext10 = (req,res,json)=>{
 }
 
 const getLast10 = (req,res,json)=>{
+    if(newAdditions == 0){
+        res.redirect('/prove09')
+    }
     newAdditions -= 10;
     var url = 'https://pokeapi.co/api/v2/pokemon?offset='+newAdditions+'&limit='+items_per_page;
     

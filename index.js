@@ -16,10 +16,12 @@ const w05Class = require('./routes/w05Class');
 const ta05routes = require('./routes/ta05');
 const prove08 = require('./routes/prove08');
 const prove09 = require('./routes/prove09');
-
+const prove10 = require('./routes/prove10');
 
 app.use(express.static(path.join(__dirname, 'public')))
    .set('views', path.join(__dirname, 'views'))
+   .set('/scripts', path.join(__dirname, 'public/scripts'))
+   .set('/data', path.join(__dirname, 'public/data'))
    .set('view engine', 'ejs')
    // For view engine as Pug
    //.set('view engine', 'pug') // For view engine as PUG. 
@@ -37,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')))
    .use('/ta05',ta05routes)
    .use(prove08)
    .use(prove09)
+   .use(prove10)
    .get('/', (req, res, next) => {
      // This is the primary index, always handled last. 
      res.render('pages/index', {title: 'Welcome to my CSE341 repo', path: '/'});

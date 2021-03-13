@@ -39,8 +39,15 @@ const submitName = () => {
     const data = postData('/prove10/insertName', {
         newName: newName
     })
-
-    const data1 = getData('/prove10/fetchAll')
+    const avengers = getData('/prove10/fetchAll')
+    data.then(response => {
+        console.log(response)
+        if (response.status == 200) {
+            populateList() // Repopulate the list
+        } else {
+            console.error(status) // Console log our status code
+        }
+    })
 }
 
 // Initialize the list

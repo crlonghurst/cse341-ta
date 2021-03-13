@@ -40,7 +40,7 @@ const submitName = () => {
         newName: newName
     })
 
-    const data = getData('/prove10/fetchAll')
+    const data1 = getData('/prove10/fetchAll')
 }
 
 // Initialize the list

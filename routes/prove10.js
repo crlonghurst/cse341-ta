@@ -6,6 +6,7 @@ const dummyData = require('../public/data/prove10.json')
 
 router.get('/prove10/fetchAll', (req, res, next) => {
     res.json(dummyData)
+    res.redirect('/prove10')
 })
 
 router.post('/prove10/insertName', (req, res, next) => {

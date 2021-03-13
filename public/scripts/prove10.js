@@ -40,14 +40,7 @@ const submitName = () => {
         newName: newName
     })
 
-    data.then(response => {
-        console.log(response)
-        if (response.status == 200) {
-            populateList() // Repopulate the list
-        } else {
-            console.error(status) // Console log our status code
-        }
-    })
+    const data = getData('/prove10/fetchAll')
 }
 
 // Initialize the list

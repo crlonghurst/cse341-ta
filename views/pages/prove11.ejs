@@ -1,0 +1,25 @@
+<% include ../includes/header.ejs %>
+    <title><%= title %></title>
+
+  </head>
+
+  <body>
+    
+    <% include ../includes/nav.ejs %>
+    <div class="container">
+        <h1>Names:</h1>
+        <ul id="nameList" class="">
+        </ul>
+        <h2>Submit a name</h2>
+        <div class="actions_container">
+            <input type="text" id="newName">
+            <input type="text" name="power" id="power">
+            <button id="submitName" onclick="submitName()">Submit</button>
+        </div>
+    </div>
+    
+    <!-- <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/scripts/prove11.js"></script>
+  </body>
+</html>

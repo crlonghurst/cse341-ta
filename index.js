@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const session = require('express-session');
 const PORT = process.env.PORT || 5000 // So we can run on heroku || (OR) localhost:5000
 
 const app = express();
@@ -18,6 +19,7 @@ const prove08 = require('./routes/prove08');
 const prove09 = require('./routes/prove09');
 const prove10 = require('./routes/prove10');
 const prove11 = require('./routes/prove11');
+const prove12 = require('./routes/prove12');
 
 const server = app.listen(PORT);
 
@@ -29,6 +31,12 @@ app.use(express.static(path.join(__dirname, 'public')))
    .set('views', path.join(__dirname, 'views'))
    .set('/scripts', path.join(__dirname, 'public/scripts'))
    .set('/data', path.join(__dirname, 'public/data'))
+   .use(session({
+     secret: 'random_text',
+     cookie: {
+       httpOnly: false
+     }
+   }))
    .set('view engine', 'ejs')
    // For view engine as Pug
    //.set('view engine', 'pug') // For view engine as PUG. 
@@ -48,6 +56,7 @@ app.use(express.static(path.join(__dirname, 'public')))
    .use(prove09)
    .use(prove10)
    .use(prove11)
+   .use(prove12)
    .get('/', (req, res, next) => {
      // This is the primary index, always handled last. 
      res.render('pages/index', {title: 'Welcome to my CSE341 repo', path: '/'});
@@ -58,17 +67,31 @@ app.use(express.static(path.join(__dirname, 'public')))
    })
 
 
-   io.on('connection', socket =>{
-    console.log('Client connected')
-    socket.on('new-name', update =>{
-      console.log("Got to the emit")
-      if(update){
-
-        console.log(update);
-        socket.broadcast.emit('update-list')
-      }
-      else{
-        console.log('Looks like something went wrong');
-      }
-    })
-  })
+   io.on('connection', socket => {
+       console.log('Client connected!')
+   
+       socket
+           .on('disconnect', () => {
+               console.log('A client disconnected!')
+               
+           })
+           .on('newUser', (username, time) => {
+               // A new user logs in.
+               const message = `${username} has logged on.`
+               socket.broadcast.emit('newMessage', {
+                   /** CONTENT for the emit **/
+                   message,
+                   time,
+                   from: 'admin'
+               }) // <-----TODO-----
+           })
+           .on('message', data => {
+               // Receive a new message
+               console.log('Message received')
+               console.log(data)
+               socket.broadcast.emit('newMessage', {
+                   /** CONTENT for the emit **/
+                   ...data
+               }) // <-----TODO----- Note, only emits to all OTHER clients, not sender.
+           })
+   })
